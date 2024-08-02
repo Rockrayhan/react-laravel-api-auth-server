@@ -14,11 +14,19 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::post('/login', [AuthController::class, 'Login']) ;
+Route::post('/login', [AuthController::class, 'Login'])->name('login') ;
 Route::post('/register', [AuthController::class, 'Register']) ;
 Route::post('/forgetpassword', [ForgetController::class, 'ForgetPassword']) ;
 Route::post('/resetpassword', [ResetController::class, 'ResetPassword']) ;
 Route::get('/user', [UserController::class, 'user'])->middleware('auth:api') ;
 
 Route::get('/products', [ProductController::class, 'index']) ;
-Route::post('/products/store', [ProductController::class, 'store']) ;
+
+
+Route::middleware('auth:api')->group(function () {
+    Route::post('/products/store', [ProductController::class, 'store']) ;
+    Route::get('/products/edit/{id}', [ProductController::class, 'edit']) ;
+    Route::post('/products/update/{id}', [ProductController::class, 'update']) ;
+    Route::post('/products/delete/{id}', [ProductController::class, 'delete']) ;
+
+});

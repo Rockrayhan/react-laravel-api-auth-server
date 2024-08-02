@@ -18,21 +18,24 @@ class ProductSeeder extends Seeder
                 'name' => 'Orange Paint Card',
                 'description' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
                 'price' => '50000',
-                'stock' => '16'
+                'stock' => '16',
+                'user_id' => '11'
                 
             ],
             [
                 'name' => 'Tea Cup Art',
                 'description' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
                 'price' => '35000',
-                'stock' => '60'
+                'stock' => '60',
+                'user_id' => '12'
                 
             ],
             [
                 'name' => 'Leg Tattoo Paint',
                 'description' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
                 'price' => '65000',
-                'stock' => '36'
+                'stock' => '36',
+                'user_id' => '12'
                 
             ]
         ]);
